@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import { Card, Typography, Button } from '@material-ui/core'
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
-import ResellerLogin from '../auth/ResellerLogin';
-import Modal from '../../component/modal/ReselerModal';
 import ReselerModal from '../../component/modal/ReselerModal';
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -13,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Reseller = () => {
-    const [showLogin, setShowLogin] = useState(true)
     const classes = useStyles();
     return (
         <>

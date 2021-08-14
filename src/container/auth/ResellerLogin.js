@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import AuthNav from "../../component/authNav/AuthNav";
 import AuthInput from "../../component/input/AuthInput";
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import PhoneIcon from '@material-ui/icons/Phone';
 import LockIcon from '@material-ui/icons/Lock';
-import { FormControlLabel, Checkbox, Button } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import Card from '../../component/card/Card'
 import CancelIcon from '@material-ui/icons/Cancel';
 
@@ -31,12 +30,8 @@ const useStyles = makeStyles({
 });
 
 const ResellerLogin = () => {
-    const [remember, setRemember] = useState(false)
     const classes = useStyles()
-    /////Methode for changing checkbox input
-    const handleChange = () => {
-        setRemember(prevSta => !prevSta)
-    }
+
     return (
         <>
             <Card>
