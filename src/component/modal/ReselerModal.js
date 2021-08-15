@@ -17,7 +17,7 @@ function getModalStyle() {
     };
 }
 
-export default function ReselerModal() {
+export default function ReselerModal(props) {
     // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(true);
@@ -27,14 +27,14 @@ export default function ReselerModal() {
     };
 
     const body = (
-        <ResellerLogin />
+        <ResellerLogin handlerClode={props.handler} />
     );
 
     return (
         <div>
             <Modal
-                open={open}
-                onClose={handleClose}
+                open={props.open}
+                onClose={props.handler}
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
             >

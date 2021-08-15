@@ -1,12 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 import AuthNav from "../../component/authNav/AuthNav";
 import AuthInput from "../../component/input/AuthInput";
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import AccountBoxOutlinedIcon from '@material-ui/icons/AccountBoxOutlined';
 import PhoneIcon from '@material-ui/icons/Phone';
 import LockIcon from '@material-ui/icons/Lock';
 import { Button } from '@material-ui/core'
 import Card from '../../component/card/Card'
-import CancelIcon from '@material-ui/icons/Cancel';
+import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
 const useStyles = makeStyles({
     pos: {
@@ -19,27 +19,28 @@ const useStyles = makeStyles({
     },
     userIcon: {
         color: 'black',
-        marginRight: '.5rem'
+        marginRight: '.5rem',
+        cursor: 'pointer'
     },
     bColor: {
         backgroundColor: 'white'
     },
     tColor: {
         color: 'black'
-    }
+    },
 });
 
-const ResellerLogin = () => {
+const ResellerLogin = (props) => {
     const classes = useStyles()
 
     return (
         <>
             <Card>
-                <AuthNav loginTitle='Create New Reseller' bColor={classes.bColor} tColor={classes.tColor} >
-                    <CancelIcon className={classes.userIcon} /></AuthNav>
+                <AuthNav loginTitle='Create New Reseller' tColor={classes.tColor} >
+                    <CancelOutlinedIcon onClick={props.handlerClode} className={classes.userIcon} /></AuthNav>
                 <div>
-                    <AuthInput label='Login' >
-                        <AccountBoxIcon />
+                    <AuthInput label='UserName' >
+                        <AccountBoxOutlinedIcon />
                     </AuthInput>
                     <AuthInput label='Password' >
                         <LockIcon />
